@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cn7j3msq2q1ti"]
+
+[ext_resource type="Script" uid="uid://dhl1dsjx2wn6h" path="res://Scripts/LaserObstacle.cs" id="1_yqw55"]
+[ext_resource type="Texture2D" uid="uid://xxnsams3sw5w" path="res://Assets/icon.svg" id="2_ont3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v10l4"]
+size = Vector2(10, 158)
+
+[node name="LaserObstacle" type="StaticBody2D" unique_id=919579705]
+script = ExtResource("1_yqw55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660038424]
+shape = SubResource("RectangleShape2D_v10l4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736751086]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.109375, 1.234375)
+texture = ExtResource("2_ont3k")

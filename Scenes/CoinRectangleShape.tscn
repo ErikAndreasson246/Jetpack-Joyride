@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b06yhtlf7ejr6"]
+
+[ext_resource type="PackedScene" uid="uid://6k765yvimvi2" path="res://Scenes/Coin.tscn" id="1_rm8as"]
+
+[node name="CoinRectangleShape" type="Node2D" unique_id=1975905543]
+
+[node name="Coin7" parent="." unique_id=51791412 instance=ExtResource("1_rm8as")]
+position = Vector2(-150, 0)
+
+[node name="Coin5" parent="." unique_id=162680106 instance=ExtResource("1_rm8as")]
+position = Vector2(-100, 0)
+
+[node name="Coin6" parent="." unique_id=796956698 instance=ExtResource("1_rm8as")]
+position = Vector2(-50, 0)
+
+[node name="Coin4" parent="." unique_id=391888218 instance=ExtResource("1_rm8as")]
+position = Vector2(150, 0)
+
+[node name="Coin3" parent="." unique_id=1588439911 instance=ExtResource("1_rm8as")]
+position = Vector2(100, 0)
+
+[node name="Coin2" parent="." unique_id=2099992189 instance=ExtResource("1_rm8as")]
+position = Vector2(50, 0)
+
+[node name="Coin" parent="." unique_id=1543755709 instance=ExtResource("1_rm8as")]
+
+[node name="Coin8" parent="." unique_id=1388715842 instance=ExtResource("1_rm8as")]
+position = Vector2(-150, 50)
+
+[node name="Coin9" parent="." unique_id=1196293844 instance=ExtResource("1_rm8as")]
+position = Vector2(-100, 50)
+
+[node name="Coin10" parent="." unique_id=910755955 instance=ExtResource("1_rm8as")]
+position = Vector2(-50, 50)
+
+[node name="Coin11" parent="." unique_id=741791232 instance=ExtResource("1_rm8as")]
+position = Vector2(150, 50)
+
+[node name="Coin12" parent="." unique_id=245347968 instance=ExtResource("1_rm8as")]
+position = Vector2(100, 50)
+
+[node name="Coin13" parent="." unique_id=2075497212 instance=ExtResource("1_rm8as")]
+position = Vector2(50, 50)
+
+[node name="Coin14" parent="." unique_id=360938704 instance=ExtResource("1_rm8as")]
+position = Vector2(0, 50)
+
+[node name="Coin15" parent="." unique_id=1071867729 instance=ExtResource("1_rm8as")]
+position = Vector2(-150, -50)
+
+[node name="Coin16" parent="." unique_id=721739350 instance=ExtResource("1_rm8as")]
+position = Vector2(-100, -50)
+
+[node name="Coin17" parent="." unique_id=2090624183 instance=ExtResource("1_rm8as")]
+position = Vector2(-50, -50)
+
+[node name="Coin18" parent="." unique_id=1416297259 instance=ExtResource("1_rm8as")]
+position = Vector2(150, -50)
+
+[node name="Coin19" parent="." unique_id=241647264 instance=ExtResource("1_rm8as")]
+position = Vector2(100, -50)
+
+[node name="Coin20" parent="." unique_id=562379381 instance=ExtResource("1_rm8as")]
+position = Vector2(50, -50)
+
+[node name="Coin21" parent="." unique_id=982824580 instance=ExtResource("1_rm8as")]
+position = Vector2(0, -50)

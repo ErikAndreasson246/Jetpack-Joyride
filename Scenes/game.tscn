@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dfuw55tysr648"]
+
+[ext_resource type="PackedScene" uid="uid://c774n53lh7lfa" path="res://Scenes/character.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://75us8w7gakxa" path="res://Scripts/Game.cs" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cn7j3msq2q1ti" path="res://Scenes/laser obstacle.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://b06yhtlf7ejr6" path="res://Scenes/CoinRectangleShape.tscn" id="3_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://0nn82h8vgtl0" path="res://Scenes/Missile.tscn" id="3_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://m25edficuriw" path="res://Scenes/CoinDiamondShape.tscn" id="4_v158k"]
+[ext_resource type="PackedScene" uid="uid://cc3iyekhu066s" path="res://Scenes/CoinLineShape.tscn" id="5_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://88d1v12q2066" path="res://Scenes/CoinCylinderShape.tscn" id="6_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://xxnsams3sw5w" path="res://Assets/icon.svg" id="9_ldgsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yrcf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v10l4"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yrcf"]
+font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v10l4"]
+size = Vector2(128, 128)
+
+[node name="Game" type="Node2D" unique_id=1244617564 node_paths=PackedStringArray("character", "objectSpawner", "missileIndicator")]
+process_mode = 1
+scale = Vector2(1.0033209, 0.9950052)
+script = ExtResource("1_qxrlw")
+character = NodePath("Character")
+laserObstaclePackedScene = ExtResource("2_qxrlw")
+missilePackedScene = ExtResource("3_h4fw4")
+coinsPackedScenes = Array[PackedScene]([ExtResource("3_1l0tm"), ExtResource("4_v158k"), ExtResource("5_h4fw4"), ExtResource("6_ldgsr")])
+objectSpawner = NodePath("ObjectSpawner")
+missileIndicator = NodePath("MissileIndicator")
+
+[node name="Character" parent="." unique_id=1777554427 instance=ExtResource("1_ebmjs")]
+position = Vector2(149, 583)
+
+[node name="FloorHitBox" type="StaticBody2D" parent="." unique_id=1726929791]
+position = Vector2(575, 660)
+scale = Vector2(57.600002, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorHitBox" unique_id=1763916729]
+shape = SubResource("RectangleShape2D_1yrcf")
+
+[node name="CeilingHitBox" type="StaticBody2D" parent="." unique_id=1651597934]
+position = Vector2(575, -10)
+scale = Vector2(57.600002, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingHitBox" unique_id=2018134886]
+shape = SubResource("RectangleShape2D_1yrcf")
+
+[node name="ObjectSpawner" type="Marker2D" parent="." unique_id=1164642157]
+position = Vector2(1300, 325)
+
+[node name="ObjectSpawnTimer" type="Timer" parent="." unique_id=325894465]
+wait_time = 2.0
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=225467825]
+wait_time = 3.5
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=2074278983]
+wait_time = 0.2
+
+[node name="MissileSpawnTimer" type="Timer" parent="." unique_id=331365025]
+wait_time = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=698483623]
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=953774037]
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 202.0
+offset_bottom = 79.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_v10l4")
+
+[node name="CoinsText" type="Label" parent="CanvasLayer" unique_id=1507233941]
+offset_left = 13.0
+offset_top = 74.0
+offset_right = 201.0
+offset_bottom = 143.0
+text = "Coins: 0"
+label_settings = SubResource("LabelSettings_1yrcf")
+
+[node name="MissileIndicator" type="StaticBody2D" parent="." unique_id=1333063301]
+visible = false
+position = Vector2(1150, 325)
+scale = Vector2(0.16081655, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissileIndicator" unique_id=196468485]
+shape = SubResource("RectangleShape2D_v10l4")
+
+[node name="Sprite2D" type="Sprite2D" parent="MissileIndicator" unique_id=792870429]
+modulate = Color(1, 0, 0.63529414, 1)
+texture = ExtResource("9_ldgsr")
+
+[connection signal="OnCoinCollected" from="Character" to="." method="OnCoinCollected"]
+[connection signal="OnPlayerDeath" from="Character" to="." method="OnPlayerDeath"]

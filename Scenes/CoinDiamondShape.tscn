@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://m25edficuriw"]
+
+[ext_resource type="PackedScene" uid="uid://6k765yvimvi2" path="res://Scenes/Coin.tscn" id="1_86fa2"]
+
+[node name="CoinDiamondShape" type="Node2D" unique_id=1563476293]
+
+[node name="Coin5" parent="." unique_id=51791412 instance=ExtResource("1_86fa2")]
+position = Vector2(100, 0)
+
+[node name="Coin2" parent="." unique_id=590393965 instance=ExtResource("1_86fa2")]
+position = Vector2(50, 0)
+
+[node name="Coin4" parent="." unique_id=1385820602 instance=ExtResource("1_86fa2")]
+position = Vector2(-100, 0)
+
+[node name="Coin3" parent="." unique_id=346889143 instance=ExtResource("1_86fa2")]
+position = Vector2(-50, 0)
+
+[node name="Coin7" parent="." unique_id=1245261539 instance=ExtResource("1_86fa2")]
+position = Vector2(0, 100)
+
+[node name="Coin6" parent="." unique_id=1801227065 instance=ExtResource("1_86fa2")]
+position = Vector2(0, 50)
+
+[node name="Coin9" parent="." unique_id=1935377411 instance=ExtResource("1_86fa2")]
+position = Vector2(0, -100)
+
+[node name="Coin8" parent="." unique_id=883576231 instance=ExtResource("1_86fa2")]
+position = Vector2(0, -50)
+
+[node name="Coin10" parent="." unique_id=959866490 instance=ExtResource("1_86fa2")]
+position = Vector2(-50, 50)
+
+[node name="Coin11" parent="." unique_id=1491025347 instance=ExtResource("1_86fa2")]
+position = Vector2(-50, -50)
+
+[node name="Coin12" parent="." unique_id=1533564642 instance=ExtResource("1_86fa2")]
+position = Vector2(50, -50)
+
+[node name="Coin13" parent="." unique_id=1629089490 instance=ExtResource("1_86fa2")]
+position = Vector2(50, 50)
+
+[node name="Coin" parent="." unique_id=358644842 instance=ExtResource("1_86fa2")]

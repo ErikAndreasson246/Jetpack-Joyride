@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0nn82h8vgtl0"]
+
+[ext_resource type="Script" uid="uid://b4t34f5od3g75" path="res://Scripts/Missile.cs" id="1_3yf48"]
+[ext_resource type="Texture2D" uid="uid://xxnsams3sw5w" path="res://Assets/icon.svg" id="1_kfcgg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v10l4"]
+radius = 87.0
+height = 216.0
+
+[node name="Missile" type="StaticBody2D" unique_id=791202450]
+script = ExtResource("1_3yf48")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1804803175]
+modulate = Color(3.7449038, 0.0011096485, 2.7954175, 1)
+scale = Vector2(1.3463992, 0.19999892)
+texture = ExtResource("1_kfcgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546472123]
+scale = Vector2(1, 0.11999971)
+shape = SubResource("CapsuleShape2D_v10l4")

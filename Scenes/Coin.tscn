@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://6k765yvimvi2"]
+
+[ext_resource type="Texture2D" uid="uid://xxnsams3sw5w" path="res://Assets/icon.svg" id="1_h5dih"]
+[ext_resource type="Script" uid="uid://dc84a78wfslr4" path="res://Scripts/Coin.cs" id="1_somhs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6gxc"]
+radius = 21.023796
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1yrcf"]
+radius = 20.22375
+
+[node name="Coin" type="StaticBody2D" unique_id=51791412]
+script = ExtResource("1_somhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828790871]
+modulate = Color(4.9187236, 4.9187236, 0, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_h5dih")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=752258555]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=834881388]
+shape = SubResource("CircleShape2D_r6gxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=419716383]
+shape = SubResource("CircleShape2D_1yrcf")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="OnCoinHit"]
