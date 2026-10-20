@@ -58,7 +58,6 @@ public partial class Game : Node2D {
 
 		var timer = GetNode<Timer>("RespawnTimer");
 		timer.Start();
-		GD.Print("HEj");
 	}
 
 	

@@ -3,6 +3,7 @@ using System;
 
 public partial class Main : Node {
 	[Export] PackedScene gameScene;
+	[Export] CanvasLayer pauseMenu;
 
 	private Game gameScript;
 	private Label highscoreLabel;
@@ -19,7 +20,9 @@ public partial class Main : Node {
 
 
 	public override void _Process(double delta) {
-		PauseGame();
+		if (Input.IsActionJustPressed("Pause")) {
+			TogglePauseGame();
+		}
 	}
 
 	public void OnGameOver() {
@@ -45,9 +48,17 @@ public partial class Main : Node {
 		gameScript = newGame;
 	}
 
-	private void PauseGame() {
-		if (Input.IsActionJustPressed("Pause")) {
+	private void TogglePauseGame() {	
 			GetTree().Paused = !GetTree().Paused;
-		}
+			pauseMenu.Visible = !pauseMenu.Visible;
 	}
+
+	public void OnResumeButtonPressed() {
+		TogglePauseGame();
+	}
+
+	public void OnQuitButtonPressed() {
+		GetTree().Quit();
+	}
+
 }

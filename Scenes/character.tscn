@@ -1,29 +1,93 @@
 [gd_scene format=3 uid="uid://c774n53lh7lfa"]
 
 [ext_resource type="Script" uid="uid://qhhfqauwxkb2" path="res://Scripts/CharacterScript.cs" id="1_ushfy"]
-[ext_resource type="Texture2D" uid="uid://xxnsams3sw5w" path="res://Assets/icon.svg" id="2_owm7s"]
+[ext_resource type="Texture2D" uid="uid://ch2ngt8y5mf8q" path="res://Assets/CharacterSprites.png" id="2_ushfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owm7s"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(0, 0, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(169, 0, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejsiy"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(338, 0, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mse5"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(507, 0, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reotu"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(0, 147, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ess"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(169, 147, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbia7"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(338, 147, 169, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7hj"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(507, 147, 169, 147)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2564"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owm7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nytcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mse5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reotu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ess")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7hj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v10l4"]
-size = Vector2(66, 124)
+size = Vector2(66, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yrcf"]
-size = Vector2(72, 128)
+size = Vector2(72, 84)
 
 [node name="Character" type="CharacterBody2D" unique_id=1777554427]
 script = ExtResource("1_ushfy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1524936092]
-scale = Vector2(0.609375, 1)
-texture = ExtResource("2_owm7s")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1150868739]
+sprite_frames = SubResource("SpriteFrames_w2564")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927967040]
-position = Vector2(0, 2)
+position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_v10l4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=569019202]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=659912751]
-position = Vector2(0, 2)
+position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_1yrcf")
 debug_color = Color(0.92156863, 0, 0.019607844, 0.41960785)
 

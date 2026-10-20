@@ -6,10 +6,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_jjgbg"]
 font_size = 50
 
-[node name="Main" type="Node" unique_id=1530590751]
+[node name="Main" type="Node" unique_id=1530590751 node_paths=PackedStringArray("pauseMenu")]
 process_mode = 3
 script = ExtResource("1_bo1nx")
 gameScene = ExtResource("1_jjgbg")
+pauseMenu = NodePath("PauseMenu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1506156466]
 offset_right = 40.0
@@ -19,10 +20,27 @@ color = Color(0.37831926, 0.59909457, 1, 1)
 
 [node name="Game" parent="." unique_id=1244617564 instance=ExtResource("1_jjgbg")]
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=757228233]
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=2045829808]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="PauseMenu" unique_id=757228233]
 offset_right = 1154.0
 offset_bottom = 668.0
-color = Color(0.3, 0.3, 0.3, 0.54509807)
+color = Color(0.17785347, 0.17785347, 0.17785338, 0.54509807)
+
+[node name="ResumeButton" type="Button" parent="PauseMenu" unique_id=1860484490]
+offset_left = 460.0
+offset_top = 231.0
+offset_right = 674.0
+offset_bottom = 293.0
+text = "RESUME"
+
+[node name="QuitButton" type="Button" parent="PauseMenu" unique_id=1401870254]
+offset_left = 459.0
+offset_top = 316.0
+offset_right = 673.0
+offset_bottom = 378.0
+text = "QUIT"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1633428640]
 
@@ -45,3 +63,5 @@ label_settings = SubResource("LabelSettings_jjgbg")
 horizontal_alignment = 2
 
 [connection signal="OnGameOver" from="Game" to="." method="OnGameOver"]
+[connection signal="button_down" from="PauseMenu/ResumeButton" to="." method="OnResumeButtonPressed"]
+[connection signal="button_down" from="PauseMenu/QuitButton" to="." method="OnQuitButtonPressed"]
